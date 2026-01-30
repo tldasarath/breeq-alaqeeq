@@ -67,13 +67,16 @@ const ServicesGrid = () => {
                         {services.map((service, index) => (
                             <div
                                 key={service.id}
-                                className={`group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-lg border-2 border-[#8F1413] ${getGridClass(index)}`}
+                                className={`group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-lg border-2 border-[#8F1413] bg-gray-900 ${getGridClass(index)}`}
                             >
                                 {/* Image with zoom effect */}
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading={index < 6 ? "eager" : "lazy"}
+                                    fetchPriority={index < 6 ? "high" : "auto"}
+                                    decoding="async"
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform"
                                 />
 
                                 {/* Hover Gradient Overlay */}

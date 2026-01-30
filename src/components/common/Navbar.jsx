@@ -13,6 +13,7 @@ const Navbar = () => {
         { name: 'About', path: '/about' },
         { name: 'Services', path: '/services' },
         { name: 'Projects', path: '/portfolio' }, // Mapping 'Projects' text to '/portfolio' route
+        { name: 'FAQ', path: '/faq' },
         { name: 'Contact', path: '/contact' },
     ]
 

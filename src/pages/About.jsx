@@ -1,26 +1,25 @@
-import React from 'react'
+import React from 'react';
+import PageHeader from '../components/common/PageHeader';
+import Introduction from '../components/aboutPage/Introduction';
+import MissionVision from '../components/aboutPage/MissionVision';
+import CoreValues from '../components/aboutPage/CoreValues';
+import WhyChooseUs from '../components/aboutPage/WhyChooseUs';
+import FounderMessage from '../components/aboutPage/FounderMessage';
 
 const About = () => {
     return (
-        <div className="py-20 bg-gray-50 min-h-screen">
-            <div className="container-custom">
-                <h1 className="text-secondary-900 mb-8">About Us</h1>
-                <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12">
-                    <p className="text-lg text-secondary-600 mb-6">
-                        Breeq Alaqeeq is dedicated to delivering excellence in every pixel.
-                        We are a team of passionate developers and designers who believe in the power of the web.
-                    </p>
-                    <div className="h-64 bg-secondary-100 rounded-xl mb-6 flex items-center justify-center">
-                        <span className="text-secondary-400">Team Image Placeholder</span>
-                    </div>
-                    <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
-                    <p className="text-secondary-600">
-                        To empower businesses with digital tools that drive growth and success.
-                    </p>
-                </div>
-            </div>
+        <div className="bg-white min-h-screen">
+            <PageHeader
+                title="About Us"
+                description="BREEQ ALAQEEQ TECHNICAL WORKS: Your trusted partner for high-quality technical services, maintenance, and construction solutions in Dubai."
+            />
+            <Introduction />
+            <MissionVision />
+            <CoreValues />
+            <WhyChooseUs />
+            <FounderMessage />
         </div>
-    )
-}
+    );
+};
 
-export default About
+export default About;
