@@ -1,7 +1,8 @@
 import React from 'react';
 import iconSvg from '../../assets/images/elements/Subtract.svg';
+import iconRedSvg from '../../assets/images/elements/Subtract-red.svg';
 
-const SectionHeader = ({ title, align = 'left', className = '' }) => {
+const SectionHeader = ({ title, align = 'left', className = '', color = 'blue' }) => {
     const alignmentClasses = {
         left: 'justify-start',
         center: 'justify-center',
@@ -14,7 +15,7 @@ const SectionHeader = ({ title, align = 'left', className = '' }) => {
                 <div className="flex items-center gap-3">
                     {/* Decorative Icon */}
                     <img
-                        src={iconSvg}
+                        src={color === 'blue' ? iconSvg : iconRedSvg}
                         alt=""
                         className="w-5 h-5 md:w-6 md:h-6"
                         aria-hidden="true"
