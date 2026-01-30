@@ -45,7 +45,7 @@ const AboutUsSection = () => {
             }}
         >
 
-            <div className="absolute inset-0 bg-white/20"></div>
+            <div className="absolute inset-0 bg-[#FAF5F5]/20"></div>
 
             <Container>
                 <div className="relative z-20">

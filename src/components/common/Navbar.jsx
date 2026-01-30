@@ -76,13 +76,13 @@ const Navbar = () => {
     ]
 
     return (
-        <nav className={`bg-white fixed top-0 left-0 right-0 z-50 shadow-md font-sans transition-all duration-500 ease-in-out ${isVisible
+        <nav className={`bg-[#FAF5F5] fixed top-0 left-0 right-0 z-50 shadow-md font-sans transition-all duration-500 ease-in-out ${isVisible
                 ? 'translate-y-0 opacity-100'
                 : '-translate-y-full opacity-0'
             }`}>
             <div className="flex w-full h-auto">
                 {/* 1. Logo Section - Scalable/Responsive width */}
-                <div className="hidden lg:flex shrink-0 w-[20%] xl:w-[250px] border-r border-gray-200 items-center justify-center p-2 bg-white">
+                <div className="hidden lg:flex shrink-0 w-[20%] xl:w-[250px] border-r border-gray-200 items-center justify-center p-2 bg-[#FAF5F5]">
                     <Link to="/" className='w-full flex justify-center'>
                         <img src={logo} alt={SITE_CONFIG.name} className="h-16 w-auto object-contain" />
                     </Link>
