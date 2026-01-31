@@ -54,7 +54,7 @@ const ServicesGrid = () => {
                 // Update state whenever visibility changes
                 setIsInView(entry.isIntersecting);
             },
-            { threshold: 0.1 } // Trigger when 10% is visible
+            { threshold: 0.15 } // Increased threshold to prevent edge flickering
         );
 
         if (sectionRef.current) {
@@ -72,7 +72,7 @@ const ServicesGrid = () => {
         // If not in view, keep hidden so they can animate in again
         if (!isInView) return 'opacity-0';
 
-        const baseClass = 'fill-mode-forwards';
+        const baseClass = ''; // fill-mode-both handles the opacity during delay
 
         if ([0, 3, 6, 8].includes(index)) return `${baseClass} animate-from-left`;
         if ([1, 4, 9].includes(index)) return `${baseClass} animate-from-bottom`;
@@ -84,7 +84,7 @@ const ServicesGrid = () => {
     return (
         <section
             ref={sectionRef}
-            className="md:py-20 py-10"
+            className="md:py-20 py-10 overflow-hidden"
             style={{
                 backgroundImage: 'linear-gradient(277deg, rgba(143,20,19,1.00) 0%,rgba(0,0,0,1.00) 100%)',
                 backgroundPosition: 'center center'
@@ -93,44 +93,44 @@ const ServicesGrid = () => {
             {/* Custom CSS for Animations */}
             <style>{`
                 @keyframes slideInLeft {
-                    from { opacity: 0; transform: translateX(-50px); }
-                    to { opacity: 1; transform: translateX(0); }
+                    from { opacity: 0; transform: translate3d(-100%, 0, 0); }
+                    to { opacity: 1; transform: translate3d(0, 0, 0); }
                 }
                 @keyframes slideInRight {
-                    from { opacity: 0; transform: translateX(50px); }
-                    to { opacity: 1; transform: translateX(0); }
+                    from { opacity: 0; transform: translate3d(100%, 0, 0); }
+                    to { opacity: 1; transform: translate3d(0, 0, 0); }
                 }
                 @keyframes slideInUp {
-                    from { opacity: 0; transform: translateY(50px); }
-                    to { opacity: 1; transform: translateY(0); }
+                    from { opacity: 0; transform: translate3d(0, 100px, 0); }
+                    to { opacity: 1; transform: translate3d(0, 0, 0); }
                 }
 
                 .animate-from-left,
                 .animate-from-right,
                 .animate-from-bottom {
-                    will-change: opacity, transform;
+                    will-change: transform, opacity;
                     backface-visibility: hidden;
                     transform: translateZ(0); 
+                    perspective: 1000px;
+                    animation-fill-mode: both;
+                    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth Quad Ease Out */
+                    animation-duration: 1.4s;
                 }
 
                 .animate-from-left {
-                    animation: slideInLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                    animation-name: slideInLeft;
                 }
                 .animate-from-right {
-                    animation: slideInRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                    animation-name: slideInRight;
                 }
                 .animate-from-bottom {
-                    animation: slideInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                    animation-name: slideInUp;
                 }
                 
-                /* Stagger based on position roughly */
+                /* Stagger */
                 .animate-from-left { animation-delay: 0.1s; }
-                .animate-from-bottom { animation-delay: 0.2s; }
-                .animate-from-right { animation-delay: 0.3s; }
-
-                .fill-mode-forwards {
-                    animation-fill-mode: forwards;
-                }
+                .animate-from-bottom { animation-delay: 0.3s; }
+                .animate-from-right { animation-delay: 0.5s; }
             `}</style>
 
             <Container>
@@ -154,6 +154,8 @@ const ServicesGrid = () => {
                             <img
                                 src={service.image}
                                 alt={service.title}
+                                decoding="async"
+                                loading="lazy"
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform"
                             />
 
