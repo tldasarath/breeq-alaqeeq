@@ -56,13 +56,14 @@ const FAQSection = () => {
                                     </div>
                                 </button>
 
-                                {/* Answer Content */}
+                                {/* Answer Content Wrapper */}
                                 <div
-                                    className={`transition-all duration-300 ease-in-out overflow-hidden ${openIndex === index ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
-                                        }`}
+                                    className={`grid transition-all duration-500 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                                 >
-                                    <div className="px-5 md:px-6 pb-5 text-gray-500 text-sm md:text-sm leading-relaxed">
-                                        {item.answer}
+                                    <div className="overflow-hidden">
+                                        <div className="px-5 md:px-6 pb-5 text-gray-500 text-sm md:text-sm leading-relaxed">
+                                            {item.answer}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

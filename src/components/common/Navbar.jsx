@@ -61,7 +61,7 @@ const Navbar = () => {
             <div className="flex w-full h-auto">
                 {/* 1. Logo Section - Scalable/Responsive width */}
                 <div className="hidden lg:flex shrink-0 w-[20%] xl:w-[250px] border-r border-gray-200 items-center justify-center p-2 bg-[#FAF5F5]">
-                    <Link to="/" className='w-full flex justify-center'>
+                    <Link to="/" className='w-full flex justify-end'>
                         <img src={logo} alt={SITE_CONFIG.name} className="h-16 w-auto object-contain" />
                     </Link>
                 </div>

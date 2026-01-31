@@ -5,25 +5,32 @@ import { serviceListingData } from '../../utils/serviceListingData';
 import { CheckCircle, ArrowRight, Star } from 'lucide-react';
 
 // Import Images
-import paintingImg from '../../assets/images/services/painting_service.png';
-import hvacImg from '../../assets/images/services/hvac_service.png';
-import cleaningImg from '../../assets/images/services/cleaning_tiling.png';
-import carpentryImg from '../../assets/images/services/carpentry_work.png';
+import buildingCleaning from '../../assets/images/services/building-cleaning.webp';
+import painting from '../../assets/images/services/painting-works.webp';
+import plastering from '../../assets/images/services/plastering-works.webp';
+import hvac from '../../assets/images/services/hvac-installation&maintenance.webp';
+import mep from '../../assets/images/services/electromechanical-works.webp';
+import wallpaper from '../../assets/images/services/wallpaper-fixing.webp';
+import carpentry from '../../assets/images/services/carpeting-woodflooring.webp';
+import engraving from '../../assets/images/services/engraving-ornamentation.webp';
+import tiling from '../../assets/images/services/floor-wall-filling.webp';
+import plumbing from '../../assets/images/services/plumbing-works.webp';
+import falseCeiling from '../../assets/images/services/false-ceiling.webp';
 
 const ServiceListing = () => {
     // Map service IDs to images
     const imageMap = {
-        'building-cleaning': "/assets/images/services/building-cleaning.webp",
-        'painting-works': "/assets/images/services/painting-works.webp",
-        'plastering-works': "/assets/images/services/plastering-works.webp",
-        'hvac-services': "/assets/images/services/hvac-installation&maintenance.webp",
-        'mep-services': "/assets/images/services/electromechanical-works.webp",
-        'wallpaper-fixing': "/assets/images/services/wallpaper-fixing.webp",
-        'carpentry-flooring': "/assets/images/services/carpeting-woodflooring.webp",
-        'engraving-ornamentation': "/assets/images/services/engraving-ornamentation.webp",
-        'tiling-works': "/assets/images/services/floor-wall-filling.webp",
-        'plumbing-sanitary': "/assets/images/services/plumbing-works.webp",
-        'false-ceiling': "/assets/images/services/false-ceiling.webp"
+        'building-cleaning': buildingCleaning,
+        'painting-works': painting,
+        'plastering-works': plastering,
+        'hvac-services': hvac,
+        'mep-services': mep,
+        'wallpaper-fixing': wallpaper,
+        'carpentry-flooring': carpentry,
+        'engraving-ornamentation': engraving,
+        'tiling-works': tiling,
+        'plumbing-sanitary': plumbing,
+        'false-ceiling': falseCeiling
     };
 
     return (
@@ -32,7 +39,7 @@ const ServiceListing = () => {
             <Container className="space-y-32 ">
                 {serviceListingData.map((service, index) => {
                     const isEven = index % 2 === 0;
-                    const ServiceImage = imageMap[service.id] || cleaningImg;
+                    const ServiceImage = imageMap[service.id] || buildingCleaning;
 
                     return (
                         <div

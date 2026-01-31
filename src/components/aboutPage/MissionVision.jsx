@@ -1,5 +1,7 @@
 import React from 'react';
 import Container from '../common/Container';
+import missionImage from '../../assets/images/about/mission.webp';
+import visionImage from '../../assets/images/about/vision.webp';
 
 const MissionVision = () => {
     return (
@@ -11,7 +13,7 @@ const MissionVision = () => {
                         {/* Background Image */}
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                            style={{ backgroundImage: "url('/assets/images/about/mission.webp')" }}
+                            style={{ backgroundImage: `url(${missionImage})` }}
                         ></div>
                         {/* Gradient Overlay - Red Tint */}
                         <div className="absolute inset-0 bg-gradient-to-t from-[#5a0000] via-[#800000]/40 to-transparent opacity-80 transition-opacity duration-300"></div>
@@ -47,7 +49,7 @@ const MissionVision = () => {
                         {/* Background Image */}
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                            style={{ backgroundImage: "url('/assets/images/about/vision.webp')" }}
+                            style={{ backgroundImage: `url(${visionImage})` }}
                         ></div>
                         {/* Gradient Overlay - Blue Tint */}
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e75] via-[#1183C8]/40 to-transparent opacity-80 transition-opacity duration-300"></div>

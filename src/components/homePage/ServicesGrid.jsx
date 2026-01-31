@@ -4,18 +4,31 @@ import Container from '../common/Container';
 import SectionHeader from '../common/SectionHeader';
 import { useNavigate } from 'react-router-dom';
 
+// Import Service Images
+import buildingCleaning from '../../assets/images/services/building-cleaning.webp';
+import hvac from '../../assets/images/services/hvac-installation&maintenance.webp';
+import painting from '../../assets/images/services/painting-works.webp';
+import electromechanical from '../../assets/images/services/electromechanical-works.webp';
+import plastering from '../../assets/images/services/plastering-works.webp';
+import plumbing from '../../assets/images/services/plumbing-works.webp';
+import carpentry from '../../assets/images/services/carpeting-woodflooring.webp';
+import flooring from '../../assets/images/services/floor-wall-filling.webp';
+import falseCeiling from '../../assets/images/services/false-ceiling.webp';
+import engraving from '../../assets/images/services/engraving-ornamentation.webp';
+import wallpaper from '../../assets/images/services/wallpaper-fixing.webp';
+
 const services = [
-    { id: 1, title: 'Building Cleaning Services', image: '/assets/images/services/building-cleaning.webp' },
-    { id: 2, title: 'HVAC Installation & Maintenance', image: '/assets/images/services/hvac-installation&maintenance.webp' },
-    { id: 3, title: 'Painting Works', image: '/assets/images/services/painting-works.webp' }, // Reduced width
-    { id: 4, title: 'Electromechanical (MEP) Works', image: '/assets/images/services/electromechanical-works.webp' },
-    { id: 5, title: 'Plastering Works', image: '/assets/images/services/plastering-works.webp' }, // Center image reduced
-    { id: 6, title: 'Plumbing & Sanitary Installation', image: '/assets/images/services/plumbing-works.webp' },
-    { id: 7, title: 'Carpentry & Wood Flooring', image: '/assets/images/services/carpeting-woodflooring.webp' },
-    { id: 8, title: 'Floor & Wall Tiling', image: '/assets/images/services/floor-wall-filling.webp' }, // Takes width of 2 images
-    { id: 9, title: 'False Ceiling & Light Partitions', image: '/assets/images/services/false-ceiling.webp' },
-    { id: 10, title: 'Engraving & Ornamentation Works', image: '/assets/images/services/engraving-ornamentation.webp' },
-    { id: 11, title: 'Wallpaper Fixing Works', image: '/assets/images/services/wallpaper-fixing.webp' },
+    { id: 1, title: 'Building Cleaning Services', image: buildingCleaning },
+    { id: 2, title: 'HVAC Installation & Maintenance', image: hvac },
+    { id: 3, title: 'Painting Works', image: painting }, // Reduced width
+    { id: 4, title: 'Electromechanical (MEP) Works', image: electromechanical },
+    { id: 5, title: 'Plastering Works', image: plastering }, // Center image reduced
+    { id: 6, title: 'Plumbing & Sanitary Installation', image: plumbing },
+    { id: 7, title: 'Carpentry & Wood Flooring', image: carpentry },
+    { id: 8, title: 'Floor & Wall Tiling', image: flooring }, // Takes width of 2 images
+    { id: 9, title: 'False Ceiling & Light Partitions', image: falseCeiling },
+    { id: 10, title: 'Engraving & Ornamentation Works', image: engraving },
+    { id: 11, title: 'Wallpaper Fixing Works', image: wallpaper },
 ];
 
 const getGridClass = (index) => {
@@ -93,15 +106,15 @@ const ServicesGrid = () => {
             {/* Custom CSS for Animations */}
             <style>{`
                 @keyframes slideInLeft {
-                    from { opacity: 0; transform: translate3d(-100%, 0, 0); }
+                    from { opacity: 0; transform: translate3d(-150px, 0, 0); }
                     to { opacity: 1; transform: translate3d(0, 0, 0); }
                 }
                 @keyframes slideInRight {
-                    from { opacity: 0; transform: translate3d(100%, 0, 0); }
+                    from { opacity: 0; transform: translate3d(150px, 0, 0); }
                     to { opacity: 1; transform: translate3d(0, 0, 0); }
                 }
                 @keyframes slideInUp {
-                    from { opacity: 0; transform: translate3d(0, 100px, 0); }
+                    from { opacity: 0; transform: translate3d(0, 50px, 0); }
                     to { opacity: 1; transform: translate3d(0, 0, 0); }
                 }
 
@@ -111,10 +124,9 @@ const ServicesGrid = () => {
                     will-change: transform, opacity;
                     backface-visibility: hidden;
                     transform: translateZ(0); 
-                    perspective: 1000px;
                     animation-fill-mode: both;
                     animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth Quad Ease Out */
-                    animation-duration: 1.4s;
+                    animation-duration: 1.2s;
                 }
 
                 .animate-from-left {
@@ -127,10 +139,10 @@ const ServicesGrid = () => {
                     animation-name: slideInUp;
                 }
                 
-                /* Stagger */
+                /* Stagger - Reduced slightly for snappier feel */
                 .animate-from-left { animation-delay: 0.1s; }
-                .animate-from-bottom { animation-delay: 0.3s; }
-                .animate-from-right { animation-delay: 0.5s; }
+                .animate-from-bottom { animation-delay: 0.2s; }
+                .animate-from-right { animation-delay: 0.3s; }
             `}</style>
 
             <Container>
@@ -155,7 +167,7 @@ const ServicesGrid = () => {
                                 src={service.image}
                                 alt={service.title}
                                 decoding="async"
-                                loading="lazy"
+                                loading="eager"
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform"
                             />
 

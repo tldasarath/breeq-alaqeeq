@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { SITE_CONFIG, SOCIAL_MEDIA_DATA } from '../../utils/constants'
 import logo from '../../assets/logos/breeq-alaqeeq-technical-works.svg'
 import footerVector from '../../assets/images/footer/footer-vector.svg'
+import callVector from '../../assets/images/footer/call-vector.svg'
+import emailVector from '../../assets/images/footer/email-vector.svg'
 import Container from './Container'
 
 const Footer = () => {
@@ -11,7 +13,7 @@ const Footer = () => {
             <Container>
 
                 {/* 1. Top White Banner (Refined to match reference image) */}
-                <div className="relative bg-white rounded-2xl mb-16 flex flex-col md:flex-row items-stretch shadow-2xl overflow-hidden min-h-[140px] md:min-h-[160px]">
+                <div className="relative max-w-[1200px] mx-auto bg-white rounded-2xl mb-16 flex flex-col md:flex-row items-stretch shadow-2xl overflow-hidden min-h-[140px] md:min-h-[160px]">
                     {/* Logo Section */}
                     <div className="w-full md:w-[220px] lg:w-[280px] flex justify-center items-center py-6 md:py-0 px-6 md:px-8 relative z-10 shrink-0">
                         <img
@@ -74,21 +76,17 @@ const Footer = () => {
                     <div className="lg:col-span-4">
                         <h4 className="text-lg font-bold mb-6 text-white tracking-wide">Get In Touch</h4>
                         <div className="space-y-4">
-                            <a href={`tel:1129 22 33333`} className="flex items-center group">
-                                <span className="bg-[#8F1413] p-1.5 rounded mr-3 group-hover:bg-red-700 transition-colors">
-                                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                    </svg>
+                            <a href={`tel:${SITE_CONFIG.phone}`} className="flex items-center group">
+                                <span className=" p-1.5 rounded mr-3 transition-colors">
+                                    <img src={callVector} alt="Call" className="w-4 h-4" />
                                 </span>
-                                <span className="text-gray-300 group-hover:text-white transition-colors text-sm font-medium">1129 22 33333</span>
+                                <span className="text-gray-300 group-hover:text-white transition-colors text-sm font-medium">{SITE_CONFIG.phone}</span>
                             </a>
-                            <a href={`mailto:info@breeq.com`} className="flex items-center group">
-                                <span className="bg-[#8F1413] p-1.5 rounded mr-3 group-hover:bg-red-700 transition-colors">
-                                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
+                            <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="flex items-center group">
+                                <span className=" p-1.5 rounded mr-3  transition-colors">
+                                    <img src={emailVector} alt="Email" className="w-4 h-4" />
                                 </span>
-                                <span className="text-gray-300 group-hover:text-white transition-colors text-sm font-medium">info@breeq.com</span>
+                                <span className="text-gray-300 group-hover:text-white transition-colors text-sm font-medium">{SITE_CONFIG.contactEmail}</span>
                             </a>
                         </div>
                     </div>

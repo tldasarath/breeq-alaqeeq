@@ -3,6 +3,8 @@ import { ClipboardList, SlidersHorizontal, Cpu, RotateCw, Sparkles } from 'lucid
 import Container from '../common/Container';
 import SectionHeader from '../common/SectionHeader';
 
+import workProcessImage from '../../assets/images/work/how-we-work.webp';
+
 const steps = [
     {
         id: 1,
@@ -37,7 +39,7 @@ const WorkProcess = () => {
             {/* Added top-10/md:top-20 and bottom-10/md:bottom-20 to match section padding */}
             <div className="hidden lg:block absolute left-0 top-10 bottom-10 md:top-20 md:bottom-20 w-[35%] z-0">
                 <img
-                    src="/assets/images/work/how-we-work.webp"
+                    src={workProcessImage}
                     alt="Work Process"
                     className="w-full h-full object-cover shadow-2xl rounded-tr-2xl rounded-br-2xl"
                 />
@@ -55,7 +57,7 @@ const WorkProcess = () => {
                     {/* Mobile Only: Image Panel */}
                     <div className="lg:hidden w-full relative h-[400px] mb-8 rounded-2xl overflow-hidden shadow-xl">
                         <img
-                            src="/assets/images/work/how-we-work.webp"
+                            src={workProcessImage}
                             alt="Work Process"
                             className="w-full h-full object-cover"
                         />

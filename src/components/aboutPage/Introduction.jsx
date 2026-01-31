@@ -2,6 +2,8 @@ import React from 'react';
 import Container from '../common/Container';
 import SectionHeader from '../common/SectionHeader';
 
+import aboutImage from '../../assets/images/about/about.webp';
+
 const Introduction = () => {
     return (
         <section className="py-20 md:py-24">
@@ -10,7 +12,7 @@ const Introduction = () => {
                     <div className="order-2 lg:order-1">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="/assets/images/about/about.webp"
+                                src={aboutImage}
                                 alt="Technical Works Dubai"
                                 className="w-full h-full object-cover"
                             />
