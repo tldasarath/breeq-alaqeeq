@@ -53,27 +53,27 @@ const AboutUsSection = () => {
                     <SectionHeader title="ABOUT US" className='mb-8 md:mb-12' />
 
                     {/* Cards Container */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-2 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4 relative z-10">
                         {/* Left Side - Red Card with Rating Badge */}
-                        <div className="relative">
-                            <div className="bg-gradient-to-br from-[#8B1818] to-[#A52A2A] rounded-2xl  p-6 md:p-8 lg:p-10 text-white shadow-2xl relative h-auto lg:h-[474px] flex flex-col justify-between">
-                                {/* Content */}
-                                <div className="relative z-10">
+                        <div className="relative h-full flex">
+                            <div className="bg-gradient-to-br from-[#8B1818] to-[#A52A2A] rounded-2xl text-white shadow-2xl relative min-h-[470px] lg:min-h-[474px] h-full w-full flex flex-col overflow-hidden transition-all duration-300">
+                                {/* Content Area with padding */}
+                                <div className="p-6 md:p-8 lg:p-10 pb-4 flex-1">
                                     <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 leading-tight">
                                         Your <span className="text-[#1183C8]">Trusted Technical</span><br />
                                         Services Partner in Dubai
                                     </h3>
 
-                                    <p className="text-white/90 text-sm md:text-base lg:text-lg leading-relaxed mb-6">
+                                    <p className="text-white/90 text-sm md:text-base lg:text-lg leading-relaxed">
                                         BREEQ ALAQEEQ TECHNICAL WORKS is a Dubai-based technical services company delivering high-quality building maintenance, cleaning, painting, plastering, HVAC, MEP, and interior finishing services. We serve residential, commercial, and industrial clients with a strong focus on quality, safety, and timely execution.
                                     </p>
                                 </div>
 
-                                {/* Verified Clients Badge - Positioned at bottom-left inside the card */}
+                                {/* Verified Clients Badge - Docked at bottom-right using flex flow to avoid overlap */}
                                 <div
-                                    className={`bg-white rounded-t-2xl px-6 md:px-4 py-4 md:py-3 shadow-xl w-fit transition-all duration-700 ease-out self-end ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                                    className={`self-end bg-white rounded-t-2xl px-6 md:px-5 py-4 shadow-xl w-fit mr-6 md:mr-10 transition-all duration-700 ease-out z-20 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
                                         }`}
-                                    style={{ transitionDelay: '200ms' }}
+                                    style={{ transitionDelay: '300ms' }}
                                 >
                                     <div className="text-center">
                                         <div className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[#0E407C] mb-1">
@@ -100,12 +100,12 @@ const AboutUsSection = () => {
                         </div>
 
                         {/* Right Side - Blue Card and Video Card Stacked */}
-                        <div className="flex flex-col gap-4 lg:gap-2 h-auto lg:h-[474px]">
+                        <div className="flex flex-col gap-4 h-full">
                             {/* Blue Card - Top */}
                             <div
-                                className={`bg-gradient-to-br from-[#1E3A5F] to-[#2B5278] rounded-2xl  px-6 md:pl-5 md:pr-4 py-4 md:pt-4 md:pb-6 lg:pb-8 text-white shadow-2xl relative overflow-hidden transition-all duration-700 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                                className={`bg-gradient-to-br from-[#1E3A5F] to-[#2B5278] rounded-2xl px-6 md:pl-5 md:pr-4 py-4 md:pt-4 md:pb-6 lg:pb-8 text-white shadow-2xl relative overflow-hidden transition-all duration-700 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
                                     }`}
-                                style={{ transitionDelay: '200ms' }}
+                                style={{ transitionDelay: '400ms' }}
                             >
                                 <div className="relative z-10">
                                     <h3 className="text-xl md:text-2xl lg:text-2xl font-bold mb-3 md:mb-4 leading-tight">
@@ -121,15 +121,18 @@ const AboutUsSection = () => {
 
                             {/* Video Card - Bottom */}
                             <div
-                                className={`rounded-2xl  overflow-hidden shadow-2xl transition-all duration-700 ease-out flex-1 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                                    }`}
+                                className={`rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 ease-out flex-1 min-h-[250px] 
+
+                                    opacity-100
+                                    `}
+
                             >
                                 <video
                                     autoPlay
                                     loop
                                     muted
                                     playsInline
-                                    className="w-full h-full object-cover min-h-[200px] lg:min-h-0"
+                                    className="w-full h-full object-cover"
                                 >
                                     <source src={cleaningVideo} type="video/mp4" />
                                     Your browser does not support the video tag.

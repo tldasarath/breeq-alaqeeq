@@ -32,7 +32,7 @@ const steps = [
 
 const WorkProcess = () => {
     return (
-        <section className="relative py-10 md:py-20 bg-[#FFF9F5]">
+        <section className="relative py-10 md:py-20 bg-[#FAF5F5]">
             {/* Desktop Breakout Image - Flush Left, Outside Container */}
             {/* Added top-10/md:top-20 and bottom-10/md:bottom-20 to match section padding */}
             <div className="hidden lg:block absolute left-0 top-10 bottom-10 md:top-20 md:bottom-20 w-[35%] z-0">

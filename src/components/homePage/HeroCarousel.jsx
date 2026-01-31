@@ -8,47 +8,48 @@ const HeroCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
 
-    // Auto-advance slides
+    // Memoized navigation functions
+    const nextSlide = React.useCallback(() => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+        setTimeout(() => setIsAnimating(false), 800);
+    }, [isAnimating]);
+
+    const prevSlide = React.useCallback(() => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+        setTimeout(() => setIsAnimating(false), 800);
+    }, [isAnimating]);
+
+    // Auto-advance slides with robust interval management
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
-        }, 3000);
+        }, 5000); // Increased to 5s for better readability
+
         return () => clearInterval(interval);
-    }, [currentSlide]);
-
-    const nextSlide = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setCurrentSlide((prev) => (prev === HERO_SLIDES.length - 1 ? 0 : prev + 1));
-        // Reset animation lock after transition
-        setTimeout(() => setIsAnimating(false), 800);
-    };
-
-    const prevSlide = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setCurrentSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
-        setTimeout(() => setIsAnimating(false), 800);
-    };
+    }, [nextSlide]);
 
     return (
         <div className="relative w-full
-         h-[600px] 
-         md:h-[700px] lg:h-[860px] 
+   min-h-screen
          overflow-hidden bg-gray-900 group">
 
-            {/* Background Images with Fade Effect */}
+            {/* Background Images with Fade and Zoom Effect */}
             {HERO_SLIDES.map((slide, index) => (
                 <div
                     key={slide.id}
                     className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
                 >
-                    {/* Image */}
+                    {/* Image with slow zoom (Ken Burns) effect */}
                     <img
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover transition-transform duration-[10000ms] ease-linear ${index === currentSlide ? 'scale-110' : 'scale-100'
+                            }`}
                     />
                     {/* Overlay: Dark gradient from left */}
                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
@@ -58,7 +59,7 @@ const HeroCarousel = () => {
             {/* Content Container */}
             <div className="absolute inset-0 z-20 flex items-center">
                 <Container>
-                    <div className="c w-full">
+                    <div className="w-full">
                         <div className="max-w-3xl overflow-hidden">
                             {/* 
                             Key-based re-rendering for animation: 
@@ -109,10 +110,9 @@ const HeroCarousel = () => {
                     </svg>
                 </button>
             </div>
-            {/* </Container> */}
-
         </div>
     );
 };
+
 
 export default HeroCarousel;
