@@ -3,7 +3,7 @@ import Container from '../common/Container';
 
 const MissionVision = () => {
     return (
-        <section className="py-20 bg-white">
+        <section className="md:py-20 py-10 ">
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Mission Card */}
@@ -11,10 +11,10 @@ const MissionVision = () => {
                         {/* Background Image */}
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')" }}
+                            style={{ backgroundImage: "url('/assets/images/about/mission.webp')" }}
                         ></div>
                         {/* Gradient Overlay - Red Tint */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#5a0000] via-[#800000]/80 to-transparent opacity-90 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#5a0000] via-[#800000]/40 to-transparent opacity-80 transition-opacity duration-300"></div>
 
                         {/* Decorative Icon Background */}
                         <div className="absolute top-8 right-8 text-white/10 transform rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110">
@@ -47,10 +47,10 @@ const MissionVision = () => {
                         {/* Background Image */}
                         <div
                             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')" }}
+                            style={{ backgroundImage: "url('/assets/images/about/vision.webp')" }}
                         ></div>
                         {/* Gradient Overlay - Blue Tint */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e75] via-[#1183C8]/80 to-transparent opacity-90 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0e4e75] via-[#1183C8]/40 to-transparent opacity-80 transition-opacity duration-300"></div>
 
                         {/* Decorative Icon Background */}
                         <div className="absolute top-8 right-8 text-white/10 transform -rotate-12 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110">

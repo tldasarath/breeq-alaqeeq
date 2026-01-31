@@ -10,7 +10,7 @@ const Introduction = () => {
                     <div className="order-2 lg:order-1">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                                src="/assets/images/about/about.webp"
                                 alt="Technical Works Dubai"
                                 className="w-full h-full object-cover"
                             />

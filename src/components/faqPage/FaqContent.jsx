@@ -88,7 +88,7 @@ const FaqContent = () => {
     })).filter(cat => cat.items.length > 0);
 
     return (
-        <div className="bg-white min-h-screen py-10 md:py-20">
+        <div className=" min-h-screen py-10 md:py-20 bg-[#FAF5F5]">
             {/* Search Bar Section - Moved here to be part of the content flow if needed, or can be passed as prop */}
 
 

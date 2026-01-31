@@ -11,6 +11,7 @@ const Services = lazy(() => import('./pages/Services'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Faq = lazy(() => import('./pages/Faq'))
 
+
 function App() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
@@ -19,7 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="services" element={<Services />} />
-      
+
           <Route path="faq" element={<Faq />} />
           <Route path="contact" element={<Contact />} />
         </Route>

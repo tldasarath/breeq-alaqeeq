@@ -8,10 +8,9 @@ import FounderMessage from '../components/aboutPage/FounderMessage';
 
 const About = () => {
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-[#FAF5F5] min-h-screen">
             <PageHeader
                 title="About Us"
-                description="BREEQ ALAQEEQ TECHNICAL WORKS: Your trusted partner for high-quality technical services, maintenance, and construction solutions in Dubai."
             />
             <Introduction />
             <MissionVision />

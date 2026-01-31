@@ -26,10 +26,10 @@ const CoreValues = () => {
     ];
 
     return (
-        <section className="py-20 text-white relative overflow-hidden" style={{ background: 'linear-gradient(277deg, rgba(143,20,19,1.00) 0%,rgba(0,0,0,1.00) 100%)' }}>
+        <section className="md:py-20 py-10  relative overflow-hidden" style={{ background: 'linear-gradient(277deg, rgba(143,20,19,1.00) 0%,rgba(0,0,0,1.00) 100%)' }}>
             <Container>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our Core Values</h2>
                     <div className="w-20 h-1 bg-white/20 mx-auto rounded-full"></div>
                 </div>
 

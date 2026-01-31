@@ -42,7 +42,7 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Services', path: '/services' },
-        { name: 'Projects', path: '/portfolio' }, // Mapping 'Projects' text to '/portfolio' route
+        { name: 'Projects', path: '/' }, // Mapping 'Projects' text to '/portfolio' route
         { name: 'FAQ', path: '/faq' },
         { name: 'Contact', path: '/contact' },
     ]
@@ -78,8 +78,8 @@ const Navbar = () => {
 
     return (
         <nav className={`bg-[#FAF5F5] fixed top-0 left-0 right-0 z-50 shadow-md font-sans transition-all duration-500 ease-in-out ${isVisible
-                ? 'translate-y-0 opacity-100'
-                : '-translate-y-full opacity-0'
+            ? 'translate-y-0 opacity-100'
+            : '-translate-y-full opacity-0'
             }`}>
             <div className="flex w-full h-auto">
                 {/* 1. Logo Section - Scalable/Responsive width */}

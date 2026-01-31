@@ -1,32 +1,37 @@
-import React from 'react'
+import React from 'react';
+import PageHeader from '../components/common/PageHeader';
+import ServiceListing from '../components/Servicepage/ServiceListing';
+import Container from '../components/common/Container';
+import PrimaryButton from '../components/common/Buttons/PrimaryButton';
+import SecondaryButton from '../components/common/Buttons/SecodaryButton';
 
 const Services = () => {
-    const services = [
-        'Web Development',
-        'UI/UX Design',
-        'Mobile Apps',
-        'SEO Optimization',
-        'Cloud Solutions',
-        'Consulting'
-    ]
-
     return (
-        <div className="py-20 min-h-screen">
-            <div className="container-custom">
-                <div className="text-center mb-16">
-                    <h1 className="text-secondary-900 mb-4">Our Services</h1>
-                    <p className="text-secondary-600">Comprehensive solutions for your digital needs.</p>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {services.map((service, idx) => (
-                        <div key={idx} className="card p-6 text-center hover:-translate-y-1 transition-transform">
-                            <h3 className="text-lg font-bold text-secondary-800">{service}</h3>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
-    )
-}
+        <div className="bg-white min-h-screen">
+            <PageHeader
+                title="Our Professional Services"
+                description="Comprehensive building maintenance and technical solutions in Dubai."
+            />
 
-export default Services
+            <ServiceListing />
+
+            {/* Bottom CTA Block */}
+            {/* <div className="bg-[#1A1A1A] py-16">
+                <Container className="text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Ready to Transform Your Space?
+                    </h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto mb-8 text-lg">
+                        Contact BREEQ ALAQEEQ TECHNICAL WORKS today for a free consultation and quote.
+                    </p>
+                    <div className="flex justify-center flex-wrap gap-4">
+                        <PrimaryButton text="Get a Free Quote" onClick={() => window.location.href = '/contact'} />
+                        <SecondaryButton text="Explore Projects" onClick={() => window.location.href = '/portfolio'} />
+                    </div>
+                </Container>
+            </div> */}
+        </div>
+    );
+};
+
+export default Services;
